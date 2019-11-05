@@ -11,9 +11,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <ScrollView Orientation="Vertical">
+            
                 <Label  Text="{Binding MyStringProperty}"/>
-            </ScrollView>
+            
             
 
         </Grid>
