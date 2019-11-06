@@ -9,35 +9,26 @@ using Xamarin.Forms.Xaml;
 
 namespace App3
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    
     public partial class Page3 : ContentPage
     {
-        private string myStringProperty;
-        public string MyStringProperty
+        
+        
+        public Page3()
         {
-            get
-            {
-                return myStringProperty;
-            }
-            set
-            {
-                myStringProperty = value;
-                OnPropertyChanged(nameof(MyStringProperty));
-            }
+
+            InitializeComponent();
+            SetPropertyLabel();
+
         }
 
         private void SetPropertyLabel()
         {
             int capacity = App.Titles.Count;
-
+            List<string> temp = new List<string>();
             for (int i = 0; i < capacity; i++)
-                MyStringProperty += (App.Titles[i] + " " + App.Dates[i] + '\n');
-        }
-        public Page3()
-        {
-            SetPropertyLabel();
-            BindingContext = this;
-            InitializeComponent();
+                temp.Add(App.Titles[i] + " " + App.Dates[i] + '\n');
+            HistoryListView.ItemsSource = temp;
         }
 
     }

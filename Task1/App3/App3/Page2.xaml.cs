@@ -9,13 +9,14 @@ using Xamarin.Forms.Xaml;
 
 namespace App3
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    
     public partial class Page2 : ContentPage
     {
 
         public Page2()
         {
             InitializeComponent();
+            
         }
 
         private void SaveTtile(object sender, EventArgs e)
@@ -24,8 +25,8 @@ namespace App3
             {
                 App.Titles.Add(entry.Text);
                 App.Dates.Add(DateTime.Now.ToString("HH:mm:ss"));
-
-                Navigation.NavigationStack.First().Title = App.Titles.Last();
+                List<Page> test = Navigation.NavigationStack.Where(p => p is MainPage).ToList();
+                test[0].Title=entry.Text;
             }
         }
     }
