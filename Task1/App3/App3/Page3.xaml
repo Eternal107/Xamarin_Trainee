@@ -5,14 +5,8 @@
              >
 
     <ContentPage.Content>
-       
-            
 
             <ListView x:Name="HistoryListView"/>
-
-
-
-
-        
+    
     </ContentPage.Content>
 </ContentPage>

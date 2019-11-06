@@ -18,11 +18,11 @@ namespace App3
         {
 
             InitializeComponent();
-            SetPropertyLabel();
+            SetListView();
 
         }
 
-        private void SetPropertyLabel()
+        private void SetListView()
         {
             int capacity = App.Titles.Count;
             List<string> temp = new List<string>();
