@@ -8,8 +8,8 @@ namespace App3
 {
     public partial class App : Application
     {
-        public static List<string> Titles = new List<string>();
-        public static List<string> Dates = new List<string>();
+        public static Dictionary<DateTime,string> TitleDatess = new Dictionary<DateTime, string>();
+   
 
         public App()
         {

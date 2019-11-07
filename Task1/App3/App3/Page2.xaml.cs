@@ -23,11 +23,12 @@ namespace App3
         {
             if (entry.Text != null)
             {
-                App.Titles.Add(entry.Text);
-                App.Dates.Add(DateTime.Now.ToString("HH:mm:ss"));
+                
+                App.TitleDatess.Add(DateTime.Now, entry.Text);
 
-                List<Page> test = Navigation.NavigationStack.Where(p => p is MainPage).ToList();        
-                test[0].Title=entry.Text;
+                var page = Navigation.NavigationStack.LastOrDefault(p => p is MainPage);    
+                if(page != null)
+                    page.Title=entry.Text;
             }
         }
     }

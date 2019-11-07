@@ -24,10 +24,10 @@ namespace App3
 
         private void SetListView()
         {
-            int capacity = App.Titles.Count;
+            int capacity = App.TitleDatess.Count;
             List<string> temp = new List<string>();
             for (int i = 0; i < capacity; i++)
-                temp.Add(App.Titles[i] + " " + App.Dates[i] + '\n');
+                temp.Add(App.TitleDatess.ElementAt(i).Value + " " + App.TitleDatess.ElementAt(i).Key.ToString("HH:mm:ss") + '\n');
             HistoryListView.ItemsSource = temp;
         }
 
