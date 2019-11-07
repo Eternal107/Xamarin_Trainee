@@ -12,11 +12,11 @@ namespace App3
     
     public partial class Page2 : ContentPage
     {
-
-        public Page2()
+        private Dictionary<DateTime, string> TitleDates;
+        public Page2(Dictionary<DateTime, string> titleDates)
         {
             InitializeComponent();
-            
+            TitleDates = titleDates;
         }
 
         private void SaveTtile(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace App3
             if (entry.Text != null)
             {
                 
-                App.TitleDatess.Add(DateTime.Now, entry.Text);
+                TitleDates.Add(DateTime.Now, entry.Text);
 
                 var page = Navigation.NavigationStack.LastOrDefault(p => p is MainPage);    
                 if(page != null)

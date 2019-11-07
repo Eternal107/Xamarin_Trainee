@@ -8,7 +8,7 @@ namespace App3
 {
     public partial class App : Application
     {
-        public static Dictionary<DateTime,string> TitleDatess = new Dictionary<DateTime, string>();
+        
    
 
         public App()

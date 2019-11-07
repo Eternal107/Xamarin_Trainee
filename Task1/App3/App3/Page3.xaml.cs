@@ -12,22 +12,21 @@ namespace App3
     
     public partial class Page3 : ContentPage
     {
-        
-        
-        public Page3()
+
+        private Dictionary<DateTime, string> TitleDates;
+        public Page3(Dictionary<DateTime, string> titleDates)
         {
-
             InitializeComponent();
+            TitleDates = titleDates;
             SetListView();
-
         }
 
         private void SetListView()
         {
-            int capacity = App.TitleDatess.Count;
+            int capacity = TitleDates.Count;
             List<string> temp = new List<string>();
             for (int i = 0; i < capacity; i++)
-                temp.Add(App.TitleDatess.ElementAt(i).Value + " " + App.TitleDatess.ElementAt(i).Key.ToString("HH:mm:ss") + '\n');
+                temp.Add(TitleDates.ElementAt(i).Value + " " + TitleDates.ElementAt(i).Key.ToString("HH:mm:ss") + '\n');
             HistoryListView.ItemsSource = temp;
         }
 

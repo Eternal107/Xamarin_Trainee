@@ -10,7 +10,7 @@ namespace App3
 
     public partial class MainPage : ContentPage
     {
-
+        private Dictionary<DateTime, string> TitleDates = new Dictionary<DateTime, string>();
         public MainPage()
         {
             InitializeComponent();
@@ -18,12 +18,12 @@ namespace App3
 
         private void GoToPage2(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page2());
+            Navigation.PushAsync(new Page2(TitleDates));
         }
 
         private void GoToPage3(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page3());
+            Navigation.PushAsync(new Page3(TitleDates));
         }
 
     }
